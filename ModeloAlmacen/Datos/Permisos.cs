@@ -27,7 +27,6 @@ namespace Datos
                 }
             }
         }
-
         public void Actulizar(Modelo permiso)
         {
             using (var cnn = GetConexion())
@@ -42,6 +41,22 @@ namespace Datos
                     cmd.Parameters.AddWithValue("@name", permiso._Nombre);
                     cmd.Parameters.AddWithValue("@state", permiso._state);
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public DataTable TabPermisos()
+        {
+            using (var cnn = GetConexion())
+            {
+                cnn.Open();
+                using(var cmd=new SQLiteCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = @"Select * from Permisos where IsActivo='SI'";
+                    var Rider = cmd.ExecuteReader();
+                    var Tab = new DataTable();
+                    Tab.Load(Rider);
+                    return Tab;
                 }
             }
         }
