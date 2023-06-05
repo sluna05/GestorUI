@@ -28,9 +28,9 @@ namespace Comun
             {
                 var Per = new Modelo
                 {
-                    _Id = Convert.ToInt32(item[0]),
-                    _Nombre = item[1].ToString(),
-                    _state = Convert.ToByte(item[2])
+                    Id = Convert.ToInt32(item[0]),
+                    Nombre = item[1].ToString(),
+                    state = Convert.ToByte(item[2])
                 };
                 Lista.Add(Per);
             }

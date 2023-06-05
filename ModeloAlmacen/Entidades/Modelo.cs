@@ -8,8 +8,8 @@ namespace Entidades
 {
     public class Modelo
     {
-        public int _Id { get; set; }
-        public string _Nombre { get; set; }
-        public byte _state { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public byte state { get; set; }
     }
 }

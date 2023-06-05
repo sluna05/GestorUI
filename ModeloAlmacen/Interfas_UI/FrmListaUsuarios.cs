@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
 
 namespace Interfas_UI
 {
-    public partial class Form1 : Form
+    public partial class FrmListaUsuarios : Form
     {
-        public Form1()
+        public FrmListaUsuarios()
         {
             InitializeComponent();
+        }
+
+        private void FrmListaUsuarios_Load(object sender, EventArgs e)
+        {
+            this.Width = Cache.alto;
+            this.Height = Cache.ancho;
         }
     }
 }
